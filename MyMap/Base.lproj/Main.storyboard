@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vOm-EG-vbf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="vOm-EG-vbf" id="l70-sg-etE"/>
+                        <segue destination="SVz-ze-7hQ" kind="show" identifier="showSegue" id="zjQ-Yr-meR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Detailed Pin View Controller-->
+        <scene sceneID="rUm-I0-4kf">
+            <objects>
+                <viewController id="SVz-ze-7hQ" customClass="DetailedPinViewController" customModule="MyMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="79q-bE-Xku"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Qs-TF-DJ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTP-rn-icH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wFo-Dw-0ye">
+                                <rect key="frame" x="67" y="55" width="238" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="wnT-rt-CgY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbv-qu-Oen">
+                                <rect key="frame" x="8" y="4" width="58" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="j00-Ve-Xh6"/>
+                                    <constraint firstAttribute="height" constant="30" id="o8q-Yt-MPd"/>
+                                </constraints>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <action selector="backBTNpressed:" destination="SVz-ze-7hQ" eventType="touchUpInside" id="V59-T6-q2q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-LL-QZf">
+                                <rect key="frame" x="67" y="281" width="238" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="u2l-OL-5dP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dbv-qu-Oen" firstAttribute="leading" secondItem="cTP-rn-icH" secondAttribute="leading" constant="8" id="2Wh-zk-Jof"/>
+                            <constraint firstItem="wFo-Dw-0ye" firstAttribute="leading" secondItem="cTP-rn-icH" secondAttribute="leadingMargin" constant="51" id="3jz-Ne-9GW"/>
+                            <constraint firstItem="OKB-LL-QZf" firstAttribute="leading" secondItem="cTP-rn-icH" secondAttribute="leadingMargin" constant="51" id="LZo-SU-p2R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OKB-LL-QZf" secondAttribute="trailing" constant="54" id="Ma6-W4-fXN"/>
+                            <constraint firstItem="Dbv-qu-Oen" firstAttribute="top" secondItem="79q-bE-Xku" secondAttribute="bottom" constant="4" id="lSe-uX-TlY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wFo-Dw-0ye" secondAttribute="trailing" constant="54" id="lcN-HN-gha"/>
+                            <constraint firstItem="OKB-LL-QZf" firstAttribute="top" secondItem="wFo-Dw-0ye" secondAttribute="bottom" constant="46" id="uI0-Rt-Viq"/>
+                            <constraint firstItem="wFo-Dw-0ye" firstAttribute="top" secondItem="79q-bE-Xku" secondAttribute="bottom" constant="55" id="ygQ-vV-UdS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pinImage" destination="wFo-Dw-0ye" id="vQ9-ps-8W6"/>
+                        <outlet property="titleLabel" destination="OKB-LL-QZf" id="i7X-Fy-Ptx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5CS-0i-uZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="139"/>
+        </scene>
+    </scenes>
+</document>
